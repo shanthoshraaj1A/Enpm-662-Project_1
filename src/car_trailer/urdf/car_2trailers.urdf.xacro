@@ -1,0 +1,845 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="car_2trailers" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0249685047950147 5.80525389981545E-08 0.308263797377902"
+        rpy="0 0 0" />
+      <mass
+        value="161.296548099246" />
+      <inertia
+        ixx="5.74333133466386"
+        ixy="-9.54396368857945E-07"
+        ixz="0.715979259888364"
+        iyy="11.1969077807859"
+        iyz="2.58090746431264E-07"
+        izz="11.8625970706263" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.5"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="2.0 1.0 0.5"/>
+      </geometry>
+      <material
+        name="bright_orange">
+        <color
+          rgba="1 0.5 0 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.486274509803922 0.235294117647059 0.0156862745098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="steer_right">
+    <inertial>
+      <origin
+        xyz="0 0 -0.0522691419902046"
+        rpy="0 0 0" />
+      <mass
+        value="0.0438861509536143" />
+      <inertia
+        ixx="0.000179638239128964"
+        ixy="-3.09530314377121E-21"
+        ixz="-3.82144225880298E-21"
+        iyy="0.000124795414810826"
+        iyz="-4.4765319312341E-20"
+        izz="5.58982217166399E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/steer_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/steer_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="steer_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.2834 -0.2159 0.2159"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="steer_right" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel_front_right">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 -2.22044604925031E-16 2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.710749711059187" />
+      <inertia
+        ixx="0.00311542211207417"
+        ixy="-4.40252816370023E-19"
+        ixz="4.89078291990205E-19"
+        iyy="0.00565621280352888"
+        iyz="-1.08879834757985E-19"
+        izz="0.00311542211207417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_front_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 1 0.886274509803922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_front_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_front_right_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.1143"
+      rpy="0 0 0" />
+    <parent
+      link="steer_right" />
+    <child
+      link="wheel_front_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="steer_left">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 -0.0522691419902048"
+        rpy="0 0 0" />
+      <mass
+        value="0.0438861509536144" />
+      <inertia
+        ixx="0.000179638239128965"
+        ixy="6.67787778044852E-21"
+        ixz="1.53045847137605E-20"
+        iyy="0.000124795414810826"
+        iyz="1.34882992606323E-19"
+        izz="5.58982217166401E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/steer_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/steer_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="steer_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.2834 0.2159 0.2159"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="steer_left" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel_front_left">
+    <inertial>
+      <origin
+        xyz="2.22044604925031E-16 -2.22044604925031E-16 3.33066907387547E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.710749711059188" />
+      <inertia
+        ixx="0.00311542211207417"
+        ixy="-1.78653899417237E-15"
+        ixz="1.5015938906646E-18"
+        iyy="0.00565621280352888"
+        iyz="1.47159856276961E-19"
+        izz="0.00311542211207417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_front_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 1 0.886274509803922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_front_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_front_left_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.1143"
+      rpy="0 0 0" />
+    <parent
+      link="steer_left" />
+    <child
+      link="wheel_front_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_rear_right">
+    <inertial>
+      <origin
+        xyz="0 0 -2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.710749711059187" />
+      <inertia
+        ixx="0.00311542211207416"
+        ixy="5.681866557744E-20"
+        ixz="-7.15097397214017E-19"
+        iyy="0.00565621280352888"
+        iyz="1.34632008984562E-19"
+        izz="0.00311542211207417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_rear_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 1 0.886274509803922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_rear_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_rear_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.23095 -0.21641 0.1016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_rear_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_rear_left">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 2.22044604925031E-16 -2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.710749711059188" />
+      <inertia
+        ixx="0.00311542211207416"
+        ixy="7.07076336508181E-20"
+        ixz="3.24668390427075E-19"
+        iyy="0.00565621280352888"
+        iyz="4.18630405641039E-19"
+        izz="0.00311542211207417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_rear_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 1 0.886274509803922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_rear_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_rear_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.23095 0.21641 0.1016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_rear_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="0 0 0.0155633315213304"
+        rpy="0 0 0" />
+      <mass
+        value="0.00148787861234503" />
+      <inertia
+        ixx="7.10305155736843E-08"
+        ixy="5.87747175411144E-39"
+        ixz="-1.65931870492747E-24"
+        iyy="7.10305155736843E-08"
+        iyz="3.73107524658215E-25"
+        izz="1.94149419263025E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.831372549019608 0.0235294117647059 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.29518 0 0.5461"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="trailer1">
+    <inertial>
+      <origin
+        xyz="-0.299194633208472 -0.0013676434638723 0.116239025047718"
+        rpy="0 0 0" />
+      <mass
+        value="51.8326464514157" />
+      <inertia
+        ixx="0.895288907489371"
+        ixy="0.000190753586197387"
+        ixz="-0.00176941019689681"
+        iyy="1.45980983595813"
+        iyz="-0.00311107541004565"
+        izz="1.6642326822303" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/trailer1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/trailer1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="trailer1_joint"
+    type="continuous">
+    <origin
+      xyz="-0.4532 0 0.11113"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="trailer1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel_trailer1_left">
+    <inertial>
+      <origin
+        xyz="2.22044604925031E-16 0 -3.33066907387547E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.710749711059187" />
+      <inertia
+        ixx="0.00311542211207416"
+        ixy="-9.29687483492787E-19"
+        ixz="1.25121407406303E-18"
+        iyy="0.00565621280352888"
+        iyz="-1.28392553042862E-19"
+        izz="0.00311542211207417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_trailer1_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 1 0.886274509803922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_trailer1_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_trailer1_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.39687 0.23495 -0.009525"
+      rpy="0 0 0" />
+    <parent
+      link="trailer1" />
+    <child
+      link="wheel_trailer1_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_trailer1_right">
+    <inertial>
+      <origin
+        xyz="0 0 -1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.710749711059187" />
+      <inertia
+        ixx="0.00311542211207416"
+        ixy="9.53813651772148E-19"
+        ixz="1.15308977389893E-18"
+        iyy="0.00565621280352887"
+        iyz="9.55241922176197E-20"
+        izz="0.00311542211207416" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_trailer1_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 1 0.886274509803922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_trailer1_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_trailer1_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.39687 -0.23495 -0.009525"
+      rpy="0 0 0" />
+    <parent
+      link="trailer1" />
+    <child
+      link="wheel_trailer1_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="trailer2">
+    <inertial>
+      <origin
+        xyz="-0.299194633208472 -0.0013676434638723 0.116239025047717"
+        rpy="0 0 0" />
+      <mass
+        value="51.8326464514157" />
+      <inertia
+        ixx="0.895288907489373"
+        ixy="0.000190753586197405"
+        ixz="-0.00176941019689734"
+        iyy="1.45980983595813"
+        iyz="-0.0031110754100455"
+        izz="1.6642326822303" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/trailer2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/trailer2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="trailer2_joint"
+    type="continuous">
+    <origin
+      xyz="-0.5969 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="trailer1" />
+    <child
+      link="trailer2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel_trailer2_left">
+    <inertial>
+      <origin
+        xyz="0 0 -1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.710749711059187" />
+      <inertia
+        ixx="0.00311542211207416"
+        ixy="-1.00530769970328E-18"
+        ixz="3.06677373662752E-19"
+        iyy="0.00565621280352888"
+        iyz="-2.81053420512363E-19"
+        izz="0.00311542211207417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_trailer2_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 1 0.886274509803922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_trailer2_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_trailer2_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.39687 0.23495 -0.009525"
+      rpy="0 0 0" />
+    <parent
+      link="trailer2" />
+    <child
+      link="wheel_trailer2_left" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_trailer2_right">
+    <inertial>
+      <origin
+        xyz="0 0 -3.33066907387547E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.710749711059187" />
+      <inertia
+        ixx="0.00311542211207416"
+        ixy="1.23233688868645E-18"
+        ixz="-2.35125830624258E-18"
+        iyy="0.00565621280352887"
+        iyz="1.04752245533076E-19"
+        izz="0.00311542211207417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_trailer2_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 1 0.886274509803922 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file:///home/shanthosh/Downloads/ros2_ws/install/car_trailer/share/car_trailer/meshes/wheel_trailer2_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_trailer2_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.39687 -0.23495 -0.009525"
+      rpy="0 0 0" />
+    <parent
+      link="trailer2" />
+    <child
+      link="wheel_trailer2_right" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+  <!-- Gazebo material properties for visualization -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  
+  <gazebo reference="steer_left">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  
+  <gazebo reference="steer_right">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  
+  <gazebo reference="wheel_front_left">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="wheel_front_right">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="wheel_rear_left">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="wheel_rear_right">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="lidar">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  
+  <gazebo reference="trailer1">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+  
+  <gazebo reference="wheel_trailer1_left">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="wheel_trailer1_right">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="trailer2">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  
+  <gazebo reference="wheel_trailer2_left">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  
+  <gazebo reference="wheel_trailer2_right">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <!-- Gazebo Differential Drive Plugin -->
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <!-- Update rate in Hz -->
+      <update_rate>50</update_rate>
+
+      <!-- wheels -->
+      <left_joint>wheel_rear_left_joint</left_joint>
+      <right_joint>wheel_rear_right_joint</right_joint>
+
+      <!-- kinematics -->
+      <wheel_separation>0.5</wheel_separation>
+      <wheel_diameter>0.2</wheel_diameter>
+
+      <!-- limits -->
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+      <!-- output -->
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>false</publish_wheel_tf>
+
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+
+      <!-- Topic to receive geometry_msgs/Twist message commands -->
+      <command_topic>cmd_vel</command_topic>
+
+      <!-- Topic to publish nav_msgs/Odometry messages -->
+      <odometry_topic>odom</odometry_topic>
+    </plugin>
+  </gazebo>
+
+</robot>
